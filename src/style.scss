@@ -1,0 +1,139 @@
+@import "mixins";
+
+:root {
+  --font-stack: 'Inter', sans-serif;
+  --font-mono: 'Courier New', Courier, Consolas, monaco, monospace;
+  --zindex-base: -1;
+  --zindex-1: 1;
+  --zindex-content: 50;
+  --zindex-modal: 1000;
+  --zindex-modal-base: 900;
+  --zindex-top: 10000000;
+  --shadow-modal: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  --6px: 0.375rem;
+  --8px: 0.5rem;
+  --12px: 0.75rem;
+  --13px: 0.8125rem;
+  --14px: 0.875rem;
+  --15px: 0.9375rem;
+  --16px: 1rem;
+  --17px: 1.0625rem;
+  --18px: 1.125rem;
+  --19px: 1.1875rem;
+  --20px: 1.25rem;
+  --22px: 1.375rem;
+  --21px: 1.3125rem;
+  --24px: 1.5rem;
+  --32px: 2rem;
+  --42px: 2.652rem;
+  --64px: 4rem;
+  --72px: 4.5rem;
+  --curve: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --bounce: all 0.3s var(--curve);
+  
+  --font-sm: 11px;
+  --font-sd: 12px;
+  --font-sd-lh: 16px;
+  --font-lg: 16px;
+  --font-xl: 22px;
+  --font-w-sd: 400;
+  --font-w-md: 500;
+  --font-ls-sm: 0.12px;
+
+  --radius-sd: 2px;
+  --radius-lg: 6px;
+
+  --size-md: 30px;
+
+  --pad-xs: 10px;
+  --pad-sm: 16px;
+
+  --color-white: #fff;
+  --color-prompt-text: #fff;
+  --color-dark-gradient: linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0));
+  --color-transparent-gradient: linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0));
+  --color-rainbow: conic-gradient(from 129.15deg at 50% 50%, #FFC062 -79.73deg, #1ABCFE 1.15deg, #0ACF83 78.48deg, #A259FF 144.34deg, #F21E6A 208.99deg, #FFC062 280.27deg, #1ABCFE 361.15deg);
+  --color-alt-rainbow: conic-gradient(from 90deg at 50% 50%, #E164EF 0deg, #1FC8FF 72.0000010728836deg, #B6FF95 144.0000021457672deg, #FDF186 216.00000858306885deg, #F4BB40 288.0000042915344deg, #E164EF 360deg);
+  --color-overlay-bg: #ffffff;
+  --color-overlay-hover: var(--figma-color-bg-secondary);
+
+  --logo-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+
+  --shadow-modal: 0 0 0 1px var(--figma-color-border), 0px 23px 6px 0px rgba(171, 171, 171, 0.00), 0px 14px 6px 0px rgba(171, 171, 171, 0.01), 0px 8px 5px 0px rgba(171, 171, 171, 0.05), 0px 4px 4px 0px rgba(171, 171, 171, 0.09), 0px 1px 2px 0px rgba(171, 171, 171, 0.10);
+
+  --color-bg-twist: var(--figma-color-bg-secondary);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-stack);
+  // background: var(--figma-color-bg);
+  background: var(--figma-color-bg);
+  color: var(--figma-color-text);
+  font-size: var(--font-sd);
+  padding: 0;
+  position: relative;
+}
+
+.avatar {
+  img {
+    transform: scale3d(0.5,0.5,0.5);
+  }
+}
+
+a, button, input {
+  &:focus-visible {
+    outline: 2px solid var(--figma-color-border-selected);
+    outline-offset: 1px;
+    border-radius: 1px;
+    opacity: 1;
+  }
+  &:active {
+    outline: 0;
+  }
+}
+
+.prompt.edit, .prompt.redo {
+  --color-prompt-text: #222;
+}
+
+// #tooltip {
+//   opacity: 0;
+//   transition: opacity 0.3s ease-in-out;
+// }
+
+// #tooltip.visible {
+//   opacity: 1;
+// }
+
+// figma dark mode
+
+.figma-dark {
+  --color-overlay-bg: #383838;
+  --color-overlay-hover: var(--figma-color-bg-tertiary);
+  --shadow-modal: 0 0 0 1px var(--figma-color-border), 0px 20px 6px 0px rgba(0, 0, 0, 0.00), 0px 13px 5px 0px rgba(0, 0, 0, 0.01), 0px 7px 4px 0px rgba(0, 0, 0, 0.05), 0px 3px 3px 0px rgba(0, 0, 0, 0.09), 0px 1px 2px 0px rgba(0, 0, 0, 0.10);
+  --logo-shadow: inset 0 0 1px rgba(255,255,255,0.8);
+
+  --color-prompt-text: #fff;
+  --color-bg-twist: var(--figma-color-bg);
+
+  .prompt.edit, .prompt.redo {
+    --color-prompt-text: #fff;
+  }
+
+  .auto, .pick {
+    filter: none !important;
+  }
+
+}

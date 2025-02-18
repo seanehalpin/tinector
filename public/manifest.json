@@ -1,0 +1,15 @@
+{
+  "id": "1339211298691941383",
+  "name": "Tinectors",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "index.html",
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  },
+  "editorType": [
+    "figma",
+    "figjam"
+  ]
+}
