@@ -2,6 +2,8 @@
 
 A plugin to connect cards together.
 
+<img width="1564" alt="Screenshot 2025-02-20 at 12 09 48" src="https://github.com/user-attachments/assets/61861ce8-4edf-4271-a935-195752804581" />
+
 
 ## To get started
 
